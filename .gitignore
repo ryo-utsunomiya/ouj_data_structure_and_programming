@@ -1,0 +1,10 @@
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Makefile
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+/.idea
+/cmake-build-debug/
+/ouj_data_structure_and_programming*
