@@ -1,14 +1,6 @@
 #include <stdio.h>
 #include "quicksort.h"
 
-void print_array(int v[], int n) {
-    int i;
-    printf("\n");
-    for (i = 0; i < n; i++) {
-        printf("%d ", v[i]);
-    }
-}
-
 int partition(int v[], int lower_bound, int upper_bound) {
     int a, down, up, temp;
 
