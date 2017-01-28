@@ -1,20 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "hash-table-chaining.h"
+#include "fibonacci.h"
 
 int main() {
-    HASH *table[TABLE_SIZE];
-    int i, iF, key, data;
-
-    hash_init(table);
-    for (i = 0; i < TABLE_SIZE; i++) {
-        key = rand() % 1000;
-        data = key;
-        hash_insert(table, key, data);
+    int i;
+    for (i = 1; i < 20; i++) {
+        printf("\nFibonacci           %d ", fibonacci(i));
+        printf("\nFibonacci Tail      %d ", fibonacci_tail(i, 0, 1));
+        printf("\nFibonacci Iterative %d ", fibonacci_iterative(i));
+        printf("\n");
     }
-    hash_print(table);
-    iF = hash_find(table, 73);
-    printf("\n*** Found %d !!", iF);
 
     return 0;
 }
