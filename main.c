@@ -1,15 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "fibonacci.h"
+#include "quicksort.h"
 
 int main() {
-    int i;
-    for (i = 1; i < 20; i++) {
-        printf("\nFibonacci           %d ", fibonacci(i));
-        printf("\nFibonacci Tail      %d ", fibonacci_tail(i, 0, 1));
-        printf("\nFibonacci Iterative %d ", fibonacci_iterative(i));
-        printf("\n");
-    }
+    int array[10] = {8, 4, 3, 2, 1, 0, 7, 9, 5, 6};
+
+    print_array(array, 10);
+    quicksort(array, 0, 9);
+    print_array(array, 10);
 
     return 0;
 }
