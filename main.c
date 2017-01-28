@@ -1,24 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "binary-tree.h"
+#include "hash-table-chaining.h"
 
 int main() {
-    NODE_TYPE *root;
-    int i, v;
+    HASH *table[TABLE_SIZE];
+    int i, iF, key, data;
 
-    root = NULL;
-    printf("\nRandom numbers:\n");
-    for (i = 0; i < 10; i++) {
-        v = rand() % 100;
-        printf("%2d ", v);
-        root = tree_insert(root, v);
+    hash_init(table);
+    for (i = 0; i < TABLE_SIZE; i++) {
+        key = rand() % 1000;
+        data = key;
+        hash_insert(table, key, data);
     }
-    printf("\n\n\n*** Tree ***");
-    tree_display(root, 0);
-    printf("\n\n\n*** Delete 7 ***");
-    tree_delete(root, 7);
-    printf("\n\n\n*** Tree ***");
-    tree_display(root, 0);
+    hash_print(table);
+    iF = hash_find(table, 73);
+    printf("\n*** Found %d !!", iF);
 
     return 0;
 }
